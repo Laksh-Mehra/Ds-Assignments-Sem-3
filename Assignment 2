@@ -1,0 +1,336 @@
+(Q1)
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    int arr[10]={1,2,3,4,5,6,7,8,9,10}; 
+    int target=7; 
+    int lo=0; 
+    int hi=9; 
+    bool flag=false; 
+    while(lo<=hi){ 
+        int mid=(lo+hi)/2; 
+        if(arr[mid]==target){ 
+            flag=true; 
+            break;
+        } 
+        else if(arr[mid]>target) hi=mid-1; 
+        else lo=mid+1;
+    } 
+    cout<<flag; 
+} 
+
+(Q2)
+#include<iostream> 
+using namespace std; 
+void display(int arr[],int n){ 
+    for(int i=0;i<n;i++){ 
+        cout<<arr[i]<<" "; 
+    } 
+} 
+int main(){ 
+    int arr[]={64,34,25,12,22,11,90}; 
+    int n=sizeof(arr)/sizeof(arr[0]); 
+    for(int i=0;i<n-1;i++){ 
+        for(int j=0;j<n-1;j++){ 
+            if(arr[j]>arr[j+1]) swap(arr[j],arr[j+1]); 
+        } 
+    } 
+    display(arr,n); 
+} 
+
+(Q3)
+
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    int arr[]={1,2,4,5,6,7,8,9}; 
+    int missing=-1; 
+    int n=sizeof(arr)/sizeof(arr[0]); 
+    for(int i=0;i<n-1;i++){ 
+        if(arr[i]+1!=arr[i+1]){ 
+            missing=arr[i]+1; 
+            break; 
+        } 
+    } 
+    cout<<missing; 
+} 
+(Q4 a)
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    string a="abc"; 
+    string b="def"; 
+    cout<<a+b; 
+} 
+
+(Q4 b)
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    string a="abc"; 
+    string b="def"; 
+    cout<<a+b; 
+} 
+(Q4 b)
+
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    string a="abcde"; 
+    int i=0; 
+    int j=a.size()-1; 
+    while(i<j){ 
+        swap(a[i],a[j]); 
+        i++; 
+        j--; 
+    }  
+    cout<<a; 
+} 
+
+(Q4 c)
+
+#include<iostream> 
+using namespace std; 
+bool vowel(char c){ 
+    return (c=='a' || c=='e' || c=='i' || c=='o' || c=='u'); 
+} 
+int main(){ 
+    string a="aevuisofdbc"; 
+    string ans=""; 
+    for(int i=0;i<a.size();i++){ 
+        if(!vowel(a[i])) ans+=a[i]; 
+    } 
+    cout<<ans; 
+} 
+(Q4 d)
+
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    string a="cbedafghsjkel"; 
+    for(int i=0;i<a.size()-1;i++){ 
+        for(int j=0;j<a.size()-1;j++){ 
+            if(a[j]>a[j+1]) swap(a[j],a[j+1]); 
+        } 
+    } 
+    cout<<a; 
+} 
+
+(Q4 e)
+
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    string a="AJSCNDKSLSJFOF"; 
+    for(int i=0;i<a.size();i++){ 
+        a[i]+=32; 
+    } 
+    cout<<a; 
+} 
+
+(Q5 a)
+
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    int arr[3][3]={0}; 
+    for(int i=0;i<3;i++){ 
+        for(int j=0;j<3;j++){ 
+            if(i==j) cin>>arr[i][j]; 
+        }
+    } 
+    for(int i=0;i<3;i++){ 
+        for(int j=0;j<3;j++){ 
+            cout<<arr[i][j]<<" "; 
+        } 
+        cout<<endl;
+    }
+}
+
+(Q5 b)
+
+#include<iostream> 
+using namespace std; 
+int main() { 
+    int arr[3][3] = {0}; 
+    for (int i = 0; i < 3; i++) { 
+        for (int j = 0; j < 3; j++) { 
+            if (i == j || i == j - 1 || i == j + 1) { 
+                cin >> arr[i][j]; 
+            }
+        }
+    } 
+    for (int i = 0; i < 3; i++) { 
+        for (int j = 0; j < 3; j++) { 
+            cout << arr[i][j] << " "; 
+        } 
+        cout << endl;
+    } 
+    return 0; 
+} 
+
+(Q5 c)
+
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    int arr[3][3]={0}; 
+    for(int i=0;i<3;i++){ 
+        for(int j=0;j<3;j++){ 
+            if(i>j){ 
+                cin>>arr[i][j]; 
+            } 
+        } 
+    } 
+    for(int i=0;i<3;i++){ 
+        for(int j=0;j<3;j++){ 
+            cout<<arr[i][j]<<" "; 
+        } 
+        cout<<endl; 
+    } 
+} 
+
+(Q5 d)
+
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    int arr[3][3]={0}; 
+    for(int i=0;i<3;i++){ 
+        for(int j=0;j<3;j++){ 
+            if(i<j){ 
+                cin>>arr[i][j];  
+            } 
+        } 
+    } 
+    for(int i=0;i<3;i++){ 
+        for(int j=0;j<3;j++){ 
+            cout<<arr[i][j]<<" "; 
+        } 
+        cout<<endl; 
+    } 
+} 
+
+
+(Q5 e)
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    int arr[3][3]={1,2,3,4,5,6,7,8,9}; 
+    int transpose[3][3]; 
+    for(int i=0;i<3;i++){ 
+        for(int j=0;j<3;j++){ 
+            transpose[i][j]=arr[i][j]; 
+        } 
+    } 
+    for(int i=0;i<3;i++){ 
+        for(int j=0;j<i;j++){ 
+            swap(arr[i][j],arr[j][i]); 
+        } 
+    } 
+    bool flag=true; 
+    for(int i=0;i<3;i++){ 
+        for(int j=0;j<i;j++){ 
+            if(transpose[i][j]!=arr[i][j]){ 
+                flag=false; 
+                break;  
+            } 
+        } 
+    } 
+    cout<<flag; 
+} 
+
+(Q6 a)
+
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    int arr[3][3]={1,2,3,4,5,6,7,8,9}; 
+    for(int i=0;i<3;i++){ 
+        for(int j=0;j<i;j++){ 
+            swap(arr[i][j],arr[j][i]); 
+        } 
+    } 
+    for(int i=0;i<3;i++){ 
+        for(int j=0;j<3;j++){ 
+            cout<<arr[i][j]<<" "; 
+        } 
+        cout<<endl; 
+    } 
+} 
+
+(Q6 b)
+
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    int arr[2][2]={1,2,3,4}; 
+    int brr[2][2]={1,2,3,4}; 
+    int ans[2][2]; 
+    for(int i=0;i<2;i++){ 
+        for(int j=0;j<2;j++){ 
+            ans[i][j]=arr[i][j]+brr[i][j]; 
+        } 
+    } 
+    for(int i=0;i<2;i++){ 
+        for(int j=0;j<2;j++){ 
+            cout<<ans[i][j]<<" "; 
+        } 
+        cout<<endl; 
+    } 
+} 
+
+(Q6 c)
+
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    int arr[2][2]={1,2,3,4}; 
+    int brr[2][2]={1,2,3,4}; 
+    int ans[2][2]={0}; 
+    for(int i=0;i<2;i++){ 
+        for(int j=0;j<2;j++){ 
+            for(int k=0;k<2;k++){ 
+                ans[i][j]+=arr[i][k]*brr[k][j];  
+            } 
+        } 
+    } 
+    for(int i=0;i<2;i++){ 
+        for(int j=0;j<2;j++){ 
+            cout<<ans[i][j]<<" "; 
+        } 
+        cout<<endl; 
+    } 
+} 
+
+(Q7)
+
+#include<iostream> 
+using namespace std; 
+int main(){ 
+    int arr[10]={1,2,3,4,5,4,3,2,1,10}; 
+    int pair=0; 
+    for(int i=0;i<9;i++){ 
+        for(int j=i+1;j<10;j++){ 
+            if(i<j && arr[i]>arr[j]) pair++; 
+        } 
+    } 
+    cout<<pair; 
+} 
+
+(Q8)
+
+#include<iostream> 
+#include<set> 
+using namespace std; 
+int main(){ 
+    set<int>a; 
+    int arr[10]={1,1,1,3,2,4,3,2,4,5}; 
+    for(auto x:arr){ 
+        a.insert(x); 
+    } 
+    cout<<a.size(); 
+} 
+
+
+
